@@ -25,11 +25,11 @@ public class Constants {
 	/** 版本信息 */
 	public static final String VERSION_ID = "20161115";
 	
-	/** 请根据分配的信息填写，如有问题可咨询技术支持人员 **/
+	/** 请根据分配的信息填写，如有问题可咨询技术支持人员 15393155606 **/
 	/** 用户 */
 	public static final String USER_ID = "testerA";
-	/** 渠道 */
-	public static final String CHANNEL_ID = "CF0000000005";
+	/** 渠道 如有问题可咨询技术支持人员 15393155606 */
+	public static final String CHANNEL_ID = "15393155606";
 	/** 3DES秘钥 */
 	public static final String DES3_KEY = "b8hfsrgh5c073b3c1np6s5ir";
 	/** MD5秘钥 */

@@ -21,14 +21,18 @@ import com.allinpay.id.demo.util.TransMsgUtil;
 import com.allinpay.id.demo.util.XmlUtil;
 
 public class ApiTrans {
-
+	
+	private static String keyPwd = "111111";
+	private static String trustPwd = "111111";
+	
+	
 	public static ResponseData doTrans(Map<String, String> map) throws Exception {
 		System.setProperty("javax.net.ssl.keyStore", "/certs/server.keystore");
-		System.setProperty("javax.net.ssl.keyStorePassword", "111111");
+		System.setProperty("javax.net.ssl.keyStorePassword", keyPwd);
 		System.setProperty("javax.net.ssl.keyStoreType", "JKS");
 
 		System.setProperty("javax.net.ssl.trustStore", "/certs/server.keystore");
-		System.setProperty("javax.net.ssl.trustStorePassword", "111111");
+		System.setProperty("javax.net.ssl.trustStorePassword", trustPwd);
 		HttpsURLConnection.setDefaultHostnameVerifier(new TrustAnyVerifier());
 
 		String resultString = "";

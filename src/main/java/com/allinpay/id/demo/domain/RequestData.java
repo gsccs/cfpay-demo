@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * 请求橙付报文
+ * 请求报文
  * 
  * @author CuiXin
  *

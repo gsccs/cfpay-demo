@@ -25,7 +25,7 @@ public class Constants {
 	/** 版本信息 */
 	public static final String VERSION_ID = "20161115";
 	
-	/** 请根据橙付分配的信息填写，如有问题可咨询橙付技术支持人员 **/
+	/** 请根据分配的信息填写，如有问题可咨询技术支持人员 **/
 	/** 用户 */
 	public static final String USER_ID = "testerA";
 	/** 渠道 */

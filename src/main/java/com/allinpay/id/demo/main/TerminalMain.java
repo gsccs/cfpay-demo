@@ -7,19 +7,22 @@ import com.allinpay.id.demo.domain.ResponseData;
 import com.allinpay.id.demo.util.Constants;
 
 public class TerminalMain {
+	//银行卡号
+	private static String acc_No = "6222222222222";
+	//身份证号
+	private static String cid_No="62282719850201XXXX";
+	
+	private static String uname = "张";
+	
 
 	public static void main(String[] args) throws Exception {
 		GetDynKey.getDynKey();
-		args = new String[4];
-		args[0]="2";
-		args[1]="6226099310745903";
-		args[2]="张晓东";
-		args[3]="62282719850201411X";
-		
-		
-		String tradeType = args[0];
 		Constants.TRADE_TYPE = "0449";
 		test_0449();
+		test_0405();
+		test_0407();
+		test_0409();
+		test_0411();
 		
 		//selectTradeType(tradeType);
 		System.out.println(Constants.TRADE_TYPE);
@@ -32,8 +35,8 @@ public class TerminalMain {
 	
 	//两要素认证，卡号+姓名
 	private static void test_0405() throws Exception{
-		String accNo = "6226099310745903";
-		String name = "张晓东";
+		String accNo = acc_No;
+		String name = uname;
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("nbr", null);
 		map.put("accNo", accNo);
@@ -46,8 +49,8 @@ public class TerminalMain {
 	
 	
 	private static void test_0407() throws Exception{
-		String accNo = "6226099310745903";
-		String certificateCode = "62282719850201411X";
+		String accNo = acc_No;
+		String certificateCode = cid_No;
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("nbr", null);
 		map.put("accNo", accNo);
@@ -59,9 +62,9 @@ public class TerminalMain {
 	}
 	
 	private static void test_0409() throws Exception{
-		String accNo = "6226099310745903";
-		String name = "张晓东";
-		String certificateCode = "62282719850201411X";
+		String accNo = acc_No;
+		String name = uname;
+		String certificateCode = cid_No;
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("nbr", null);
 		map.put("accNo", accNo);
@@ -72,11 +75,11 @@ public class TerminalMain {
 		System.out.println("返回码" + response.getResultCode() + "，返回描述" + response.getResultDesc());
 	}
 	
-	private static void test_0411(String args[]) throws Exception{
-		String accNo = args[1];
-		String name = args[2];
-		String certificateCode = args[3];
-		String nbr = args[4];
+	private static void test_0411() throws Exception{
+		String accNo = acc_No;
+		String name = uname;
+		String certificateCode = cid_No;
+		String nbr = "";
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("nbr", nbr);
 		map.put("accNo", accNo);
@@ -100,10 +103,12 @@ public class TerminalMain {
 		ResponseData response = QueryTrans.queryTrans(userId, orderId, timeStamp);
 		System.out.println("返回码" + response.getResultCode() + "，返回描述" + response.getResultDesc());
 	}
+	
+	
 	private static void test_0449() throws Exception{
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("certificateCode", "62282719850201411X");
-		map.put("name", "张晓东");
+		map.put("certificateCode", cid_No);
+		map.put("name", uname);
 		//map.put("params", null);
 		ResponseData response = ApiTrans.doTrans(map);
 		System.out.println("返回码" + response.getResultCode() + "，返回描述" + response.getResultDesc());
